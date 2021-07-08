@@ -23,7 +23,7 @@ public class ObjectRedisSerializer implements RedisSerializer<Object> {
             objectOutputStream.flush();
             return byteArrayOutputStream.toByteArray();
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
         return new byte[0];
     }

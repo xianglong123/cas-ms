@@ -21,3 +21,7 @@ create table if not exists goods
 comment '库存表';
 ```    
 
+### 压测过程的问题与解决方案
+    1、超卖问题
+![avatar](./src/main/resources/static/压测result.jpg)
+    2、解决方案[待定]

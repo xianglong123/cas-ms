@@ -1,7 +1,12 @@
 package com.cas.controller;
 
+import com.cas.service.CommonService;
+import com.cas.service.WarmService;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 /**
  * @author xiang_long
@@ -12,15 +17,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MsController {
 
+    @Resource
+    private CommonService commonService;
+
+    @Resource
+    private WarmService warmService;
 
     @PostMapping("/ms")
     public String ms() {
-        String id = "100";
+        commonService.querySurplus("GOODS_KC_100");
+        return "ok";
+    }
 
-
-
-
-        return "";
+    @GetMapping("/warm")
+    public String warm(String id) {
+        warmService.warm(id);
+        return "ok";
     }
 
 
