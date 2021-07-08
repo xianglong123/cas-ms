@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cas.dao.GoodsMapper">
+
+    <resultMap id="result" type="com.cas.bean.Goods">
+        <result property="id" column="id"/>
+        <result property="gsName" column="gs_name"/>
+        <result property="gsCount" column="gs_count"/>
+        <result property="surplus" column="surplus"/>
+        <result property="createTime" column="create_Time"/>
+    </resultMap>
+
+    <sql id="columns">id, gs_name, gs_count, surplus, create_time</sql>
+
+    <select id="queryById" resultType="com.cas.bean.Goods">
+        select
+        <include refid="columns"/>
+        from goods
+        where id = #{id}
+    </select>
+</mapper>
+
