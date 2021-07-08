@@ -25,3 +25,6 @@ comment '库存表';
     1、超卖问题
 ![avatar](./src/main/resources/static/压测result.jpg)
     2、解决方案[待定]
+    
+    
+[压测文件](./src/main/resources/static/压测jmeter请求.jmx)
