@@ -24,7 +24,8 @@ public class MsController {
     private WarmService warmService;
 
     @PostMapping("/ms")
-    public String ms() {
+    public String ms() throws InterruptedException {
+        Thread.sleep(1000);
         commonService.querySurplus("GOODS_KC_100");
         return "ok";
     }

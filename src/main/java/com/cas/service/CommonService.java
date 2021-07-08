@@ -25,7 +25,7 @@ public class CommonService {
      * 减库存
      */
     public boolean querySurplus(String key) {
-        Integer o = Integer.valueOf(redisUtil.get(key));
+        int o = Integer.parseInt(redisUtil.get(key));
         if (o <= 0) {
             log.info("库存已抢完");
             return false;
